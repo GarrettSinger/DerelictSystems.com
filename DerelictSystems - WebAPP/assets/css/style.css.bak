@@ -1,0 +1,33 @@
+body {
+    font-family: Helvetica;
+}
+
+img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.linkedin img {
+    height: 45px;
+    margin-left: 10px;
+}
+
+.intro {
+    background-image: url("./images/Background.jpg");  
+    position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.section-title {
+    font-family: Gopher;
+}
+
+.blog-post {
+    /* background: #BBEFEF; */
+}
+
+#profile-img {
+    padding: 40px;
+}
