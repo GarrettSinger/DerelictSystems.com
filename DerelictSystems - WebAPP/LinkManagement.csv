@@ -1,5 +1,8 @@
 ID,FileName,SourceLocation,FileLocation,OldLink,NewLink,RelatedTo
 1,Index.html,Documents\Projects\DerelictSystems - WebAPP,.\,,,
-2,ManagingHTMLLinksWithPowershell.html,Documents\Projects\DerelictSystems - WebAPP,Active_Pages,"<a href=""Active_Pages/1.html"">TITLE</a>",ManagingHTMLLinksWithPowershell.html,
-3,Setup-CreateCustomAzureVHD.html,Documents\Projects\DerelictSystems - WebAPP,Active_Pages,"<a href=""Active_Pages/2.html"">TITLE</a>",Setup-CreateCustomAzureVHD.html,
-4,WebsiteHierarchy.png,Documents\Projects\DerelictSystems - WebAPP,Assets\Images,,,1
+2,ManagingHTMLLinksWithPowershell.html,Documents\Projects\DerelictSystems - WebAPP,Active_Pages,"<a href=""Active_Pages/1.html"">TITLE</a>",ManagingHTMLLinksWithPowershell.html,4;6;7
+3,Setup-CreateCustomAzureVHD.html,Documents\Projects\DerelictSystems - WebAPP,Active_Pages,"<a href=""Active_Pages/2.html"">TITLE</a>",Setup-CreateCustomAzureVHD.html,5
+4,WebsiteHierarchy.png,Documents\Projects\DerelictSystems - WebAPP,Assets\Images,,,2
+5,SetupImage,Documents\Projects\DerelictSystems - WebAPP,Assets\Images,,,3
+6,ObjectID.png,Documents\Projects\DerelictSystems - WebAPP,Assets\Images,,,2
+7,PowershellEX.png,Documents\Projects\DerelictSystems - WebAPP,Assets\Images,,,2

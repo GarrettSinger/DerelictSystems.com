@@ -4,6 +4,16 @@
 /* Timeline custom component */
 /*.d-print-none{height: 80px; justify-content: center; text-justify: auto;}
 */
+
+.code-box {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow: auto;
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+  font-size: 14px;
+}
+
 .top-bar {
   font-family: Arial;
   font-size: 40px;

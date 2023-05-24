@@ -1,18 +1,20 @@
-﻿#Find Management File
-$ManagementFileLocation = GCI "$env:userprofile"| ? {$_.name -notlike ".*"} | gci -recurse  | ? {$_.name -like "LinkManagement.csv"}
+﻿Function DefineStartVars{
+#Find Management File
+$ManagementFileLocation = GCI "$env:userprofile"| ? {$_.name -notlike ".*"} | gci -recurse  | ? {$_.name -like "LinkManagement.csv" -and $_.fullname -notlike "*Old Resources*"}
 
 #Move to Management File location
 SL $ManagementFileLocation.DirectoryName
 
 #Move Data to Object
-$ManagementFile = (Import-Csv $ManagementFileLocation.FullName -Header 'FileName','SourceLocation','FileLocation','OldLink','NewLink')[1..30]
+$ManagementFile = (Import-Csv $ManagementFileLocation.FullName -Header 'ID','FileName','SourceLocation','FileLocation','OldLink','NewLink','RelatedTo')[1..30]
+}
 
-function changeFileLinks{
+function ChangeFileLinks($OldLink,$NewLink,$ImageLink){
     #Get links that need to be updated
-    $OldLink = Read-host "What is the old link you wish to replace?"
+    if([string]::IsNullOrEmpty($OldLink)){$OldLink = Read-host "What is the old link you wish to replace?"}
     $OldPattern = [regex]::Escape($OldLink)  # Escape special characters in the old link
 
-    $NewLink = Read-host "What is the new link you wish to replace the old one with?"
+    if([string]::IsNullOrEmpty($NewLink)){$NewLink = Read-host "What is the new link you wish to replace the old one with?"}
 
     #Work with each file.
     foreach ($Item in $ManagementFile) {
@@ -43,3 +45,14 @@ function changeFileLinks{
     $ManagementFile | export-csv -NoTypeInformation -Force $ManagementFileLocation 
     & $ManagementFileLocation.FullName
 }
+
+Function MoveFiles{
+    $MovingWhat = Read-host "What file do you wish to move?"
+    $MovingOBJPath = gci .\ -Recurse | ? {$_.name -like "$MovingWhat"}
+    $MovingWhere = Read-host "Where are you moving the file to?"
+    $MovingToPath = gci .\ -Recurse | ? {$_.name -like "*$MovingWhere*"}
+
+    $FileInformation = $ManagementFile | ? {$_.filename -like "*$movingWhat*"}
+
+}
+
